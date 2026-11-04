@@ -22,6 +22,7 @@ export default function Ex01Titulo() {
       <p>Observe o título da aba do navegador ao clicar.</p>
       <p className="metric">{cliques} clique(s)</p>
       <button onClick={() => setCliques((valor) => valor + 1)}>Adicionar clique</button>
+      <button onClick={() => setCliques((valor) => valor = 0)}>Zerador</button>
       <p className="muted">Desafio: inclua um botão para zerar o contador.</p>
     </section>
   );

@@ -1,16 +1,18 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
-import { ThemeProvider } from './context/ThemeContext.jsx';
 import App from './App.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 import './styles.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <ThemeProvider>
+    {/* O provedor fica ACIMA das rotas, preservando o tema ao navegar. */}
+    <ThemeProvider>
+      {/* BrowserRouter ativa navegação client-side, sem recarregar a página. */}
+      <BrowserRouter>
         <App />
-      </ThemeProvider>
-    </BrowserRouter>
-  </StrictMode>,
+      </BrowserRouter>
+    </ThemeProvider>
+  </StrictMode>
 );
